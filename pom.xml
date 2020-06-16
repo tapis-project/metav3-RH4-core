@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>test</groupId>
+    <artifactId>test</artifactId>
+    <version>4.1.6</version>
+
+    <dependencies>
+        <!--  this is a no dependency jar built from the RH-4.0 cloned locally-->
+        <dependency>
+            <groupId>org.restheart</groupId>
+            <artifactId>restheart</artifactId>
+            <version>4.1.6</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/Docker/restheart.jar</systemPath>
+        </dependency>
+
+
+    </dependencies>
+
+</project>

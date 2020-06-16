@@ -1,0 +1,20 @@
+#   docker compose to test core image build using connection to aloe.dev8 mongodb needs vpn
+#   and these environment vars defined at compose startup
+#
+#   export MONGO_URI=mongodb://tapisadmin:d3f%40ult@aloe-dev08.tacc.utexas.edu:27019/?authSource=admin
+#
+
+  restheart:
+    image: tapis/tapis-meta-rh-core:4.1.6
+    container_name: restheart-core
+    command: 'java -Xms2G -Xmx2G -Dfile.encoding=UTF-8  -server -jar restheart.jar etc/restheart.yml --envFile etc/config.properties'
+    ports:
+      - "8080:8080"
+      - "8000:8000"
+    environment:
+      # - 'MONGO_URI=mongodb://tapisadmin:d3fault@localhost:27017/?authSource=admin'
+      - 'MONGO_URI=mongodb://tapisadmin:d3f%40ult@aloe-dev08.tacc.utexas.edu:27019/?authSource=admin'
+    volumes:
+      - './Docker/etc/restheart.yml:/opt/restheart/etc/restheart.yml:ro'
+      - './Docker/etc/config.properties:/opt/restheart/etc/config.properties:ro'
+
