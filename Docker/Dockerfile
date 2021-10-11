@@ -4,7 +4,7 @@
 #   java like the security service. Based on
 #   Openjdk image.
 #
-# LABEL maintainer="TACC <sterry1@tacc.utexas.edu>"
+# LABEL maintainer="TACC <cicsupport@tacc.utexas.edu>"
 # LABEL rh_core_ver=4.1.6
 #
 # Run from the Docker/restheart-server-build directory of the project
@@ -19,7 +19,7 @@
 
 FROM openjdk:11.0.5-jdk-stretch
 
-LABEL maintainer="sterry1@tacc.utexas.edu"
+LABEL maintainer="cicsupport@tacc.utexas.edu"
 LABEL rh-server-ver="4.1.6"
 
 RUN apt update; apt install nano
