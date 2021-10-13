@@ -4,6 +4,16 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
+    <parent>
+        <groupId>edu.utexas.tacc.tapis</groupId>
+        <artifactId>tapis-bom</artifactId>
+        <version>[2.0,3.0)</version>
+        <!-- Set empty relative path to avoid maven warning and-->
+        <!--   ensure parent is found in local repository if that-->
+        <!--   is the only place it exists.-->
+        <relativePath/>
+    </parent>
+
     <groupId>test</groupId>
     <artifactId>test</artifactId>
     <version>4.1.6</version>
@@ -17,8 +27,11 @@
             <scope>system</scope>
             <systemPath>${project.basedir}/Docker/restheart.jar</systemPath>
         </dependency>
-
-
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>5.7.0</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
-
 </project>
