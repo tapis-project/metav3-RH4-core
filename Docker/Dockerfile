@@ -22,11 +22,17 @@ FROM openjdk:11.0.5-jdk-stretch
 LABEL maintainer="cicsupport@tacc.utexas.edu"
 LABEL rh-server-ver="4.1.6"
 
-RUN apt update; apt install nano
+RUN useradd -m tapis
 
 WORKDIR /opt/restheart
 COPY ./etc/config.properties ./etc/restheart.yml etc/
 COPY ./restheart.jar /opt/restheart/
+#ENV PATH="${PATH}:/opt/restheart/"
+
+# Change to non-root user after installation is complete.
+# Create a private work directory subsequent commands.
+USER tapis
+#WORKDIR /home/tapis/work
 
 CMD ["/bin/bash"]
 EXPOSE 8080 4443 8000 8009
