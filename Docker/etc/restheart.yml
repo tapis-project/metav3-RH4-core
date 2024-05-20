@@ -157,7 +157,7 @@ use-embedded-keystore: true
 # Check if aggregation variables use operators. allowing operators in aggregation variables 
 # is risky. requester can inject operators modifying the query
 
-aggregation-check-operators: false
+aggregation-check-operators: true
 
 ## Allow unescaped characters in URL
 
